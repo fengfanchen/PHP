@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <table border="1" cellspacing="1" cellpadding="1">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>名字</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>邮箱</td>
+            <td>地址</td>
+            <td>更新时间</td>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $students as $student}
+        <tr>
+            <td>{$student.id}</td>
+            <td>{$student.name}</td>
+            <td>{$student.age}</td>
+            <td>
+                {if $student.sex eq "m"} 男
+                {else}女
+                {/if}
+            </td>
+            <td>{$student.email}</td>
+            <td>{$student.address}</td>
+            <td>{$student.updateTime}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+
+    </table>
+</body>
+</html>
